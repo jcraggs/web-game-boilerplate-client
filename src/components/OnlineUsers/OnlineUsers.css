@@ -1,16 +1,33 @@
 .textContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
   color: white;
-  height: 60%;
   justify-content: space-between;
+}
+
+/* Mobiles */
+@media (min-width: 0px) and (max-width: 2500px) {
+  .textContainer {
+    width: 90%;
+  }
+}
+
+/* Midscreen */
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .textContainer {
+    width: 70%;
+  }
+}
+
+/* Widescreen */
+@media (min-width: 1501px) {
+  .textContainer {
+    width: 60%;
+  }
 }
 
 .activeContainer {
   display: flex;
-  align-items: center;
-  margin-bottom: 50%;
 }
 
 .activeItem {
@@ -26,8 +43,11 @@
   margin-bottom: 0px;
 }
 
-@media (min-width: 320px) and (max-width: 1200px) {
-  .textContainer {
-    display: none;
-  }
+.onlineUsersTitle {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.onlineUsersList {
+  font-size: 1.1em;
 }

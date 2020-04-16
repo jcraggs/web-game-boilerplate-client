@@ -11,7 +11,7 @@
   width: 100%;
   letter-spacing: 0;
   float: left;
-  font-size: 1.1em;
+  font-size: 1.05em;
   word-wrap: break-word;
 }
 
@@ -24,6 +24,7 @@
   justify-content: flex-end;
   padding: 0 5%;
   margin-top: 3px;
+  font-size: 0.9em;
 }
 
 .sentText {
@@ -32,6 +33,7 @@
   font-family: Helvetica;
   color: #828282;
   letter-spacing: 0.3px;
+  margin: 0px;
 }
 
 .pl-10 {
@@ -44,24 +46,30 @@
 
 .justifyStart {
   justify-content: flex-start;
+  min-height: 30px;
 }
 
 .justifyEnd {
   justify-content: flex-end;
+  min-height: 30px;
 }
 
 .colourWhite {
   color: white;
+  margin: 5px;
 }
 
 .colourDark {
   color: #353535;
+  margin: 5px;
 }
 
 .backgroundBlue {
   background: #2979ff;
+  height: 100%;
 }
 
 .backgroundLight {
   background: #ebebeb;
+  height: 100%;
 }

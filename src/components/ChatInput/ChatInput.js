@@ -3,7 +3,7 @@ import React from "react";
 import "./ChatInput.css";
 
 const ChatInput = ({ message, setMessage, sendMessage }) => (
-  <form className="form">
+  <form className="form" autocomplete="off">
     <input
       className="input"
       type="text"
@@ -13,6 +13,7 @@ const ChatInput = ({ message, setMessage, sendMessage }) => (
       onKeyPress={(event) =>
         event.key === "Enter" ? sendMessage(event) : null
       }
+      autocomplete="off"
     ></input>
     <button className="sendButton" onClick={(event) => sendMessage(event)}>
       Send

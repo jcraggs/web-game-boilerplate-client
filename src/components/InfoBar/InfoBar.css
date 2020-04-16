@@ -4,7 +4,7 @@
   justify-content: space-between;
   background: #2979ff;
   border-radius: 4px 4px 0 0;
-  height: 60px;
+  height: 40px;
   width: 100%;
 }
 
@@ -14,6 +14,7 @@
   align-items: center;
   margin-left: 5%;
   color: white;
+  height: 40px;
 }
 
 .rightInnerContainer {
@@ -25,4 +26,8 @@
 
 .onlineIcon {
   margin-right: 5%;
+}
+
+.exitButton {
+  width: 15px;
 }

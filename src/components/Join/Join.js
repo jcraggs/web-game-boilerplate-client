@@ -34,6 +34,7 @@ const Join = () => {
             type="text"
             onChange={(event) => setName(event.target.value)}
             onKeyDown={(event) => submitform(event)}
+            autocomplete="off"
           />
         </div>
         <div>
@@ -43,6 +44,7 @@ const Join = () => {
             type="text"
             onChange={(event) => setRoom(event.target.value)}
             onKeyDown={(event) => submitform(event)}
+            autocomplete="off"
           />
         </div>
         <Link
