@@ -28,29 +28,41 @@ const Chat = ({ location }) => {
     setRoom(room);
 
     socket.emit("join", { name, room }, (error) => {
-      //function to get last digit, if = num, let num +=1 then send
-      // let newname = name, with trimmed digit, then plus 1
-
-      //you also want to handle if user name and room arent defined
-      // let nameLastChar = parseInt(name.split("").slice(-1).pop());
-
-      // current function cant handle beyond 0-9 very well as it reads the last digit rather than checking if it is a longer number
-
-      let newName = undefined;
-
       if (error) {
-        let nameLastChar = parseInt(name.split("").slice(-1).pop());
+        // Handles users with the same name
+        if (name && room) {
+          const findNumbers = (nameArray, nameNum) => {
+            let lastChar = nameArray.slice(-1).pop();
 
-        if (isNaN(nameLastChar) === false) {
-          let nameArr = name.split("");
-          let slicedName = nameArr.slice(0, nameArr.length - 1);
-          let combinedName = [...slicedName, (nameLastChar += 1).toString()];
-          let newName = combinedName.join("");
-          return (window.location.href = `/chat?name=${newName}&room=${room}`);
+            if (isNaN(lastChar) === false) {
+              nameNum.push(lastChar);
+              let newArr = nameArray.splice(0, nameArray.length - 1);
+              if (isNaN(newArr.slice(-1).pop()) === false) {
+                return nameNum + findNumbers(newArr, nameNum);
+              } else
+                return (window.location.href = `/chat?name=${newArr.join("")}${(
+                  Number(nameNum.reverse().join("")) + 1
+                ).toString()}&room=${room}`);
+            }
+          };
+
+          let nameLastChar = parseInt(name.split("").slice(-1).pop());
+          if (isNaN(nameLastChar) === false) {
+            let nameNum = [];
+            const nameArr = name.split("");
+            findNumbers(nameArr, nameNum);
+          } else
+            return (window.location.href = `/chat?name=${name}1&room=${room}`);
         }
 
-        if (newName === undefined) {
-          return (window.location.href = `/chat?name=${name}1&room=${room}`);
+        //Handles no name specified
+        if (!name && room) {
+          return (window.location.href = `/chat?name=guest&room=${room}`);
+        }
+
+        // Handles no room specified
+        if (!room) {
+          return (window.location.href = `/`);
         }
       }
     });
