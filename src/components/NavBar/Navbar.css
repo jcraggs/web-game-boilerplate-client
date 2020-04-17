@@ -30,21 +30,21 @@
 /* Midscreen */
 @media (min-width: 1200px) and (max-width: 1500px) {
   .burgerIcon {
-    margin-right: 15%;
+    margin-right: 10%;
   }
 
   .backArrow {
-    margin-left: 15%;
+    margin-left: 10%;
   }
 }
 
 /* Widescreen */
 @media (min-width: 1501px) {
   .burgerIcon {
-    margin-right: 20%;
+    margin-right: 12.5%;
   }
 
   .backArrow {
-    margin-left: 20%;
+    margin-left: 12.5%;
   }
 }

@@ -6,9 +6,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 76vh;
 }
 
 .chatContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 8px;
+  width: 35%;
+  height: 250px;
+  margin-top: 5px;
+}
+
+.hidden {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,20 +36,33 @@
 @media (min-width: 0px) and (max-width: 1200px) {
   .chatContainer {
     width: 90%;
-    height: 30vh;
+    height: 27.5vh;
+  }
+  .hidden {
+    width: 90%;
+    height: 40px;
   }
 }
 
 /* Midscreen */
 @media (min-width: 1200px) and (max-width: 1500px) {
   .chatContainer {
-    width: 70%;
+    width: 80%;
+  }
+  .hidden {
+    width: 80%;
+    height: 40px;
   }
 }
 
 /* Wide screen */
 @media (min-width: 1501px) {
   .chatContainer {
-    width: 60%;
+    width: 75%;
+  }
+
+  .hidden {
+    width: 75%;
+    height: 40px;
   }
 }

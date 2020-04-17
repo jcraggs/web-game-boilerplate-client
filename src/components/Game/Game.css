@@ -8,3 +8,24 @@
   flex-direction: column;
   align-content: center;
 }
+
+/* Mobiles */
+@media (min-width: 0px) and (max-width: 1200px) {
+  .gameContainer {
+    width: 90%;
+  }
+}
+
+/* Midscreen */
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .gameContainer {
+    width: 80%;
+  }
+}
+
+/* Widescreen */
+@media (min-width: 1501px) {
+  .gameContainer {
+    width: 75%;
+  }
+}

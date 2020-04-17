@@ -4,8 +4,8 @@ import "./MessageList.css";
 
 import Message from "./Message/Message";
 
-const MessageList = ({ messages, name }) => (
-  <ScrollToBottom className="messages">
+const MessageList = ({ messages, name, chatboxBool }) => (
+  <ScrollToBottom className={chatboxBool === true ? "hide" : "messages"}>
     {messages.map((message, i) => (
       <div key={i}>
         <Message message={message} name={name} />

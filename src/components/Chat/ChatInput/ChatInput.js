@@ -2,8 +2,8 @@ import React from "react";
 
 import "./ChatInput.css";
 
-const ChatInput = ({ message, setMessage, sendMessage }) => (
-  <form className="form" autoComplete="off">
+const ChatInput = ({ message, setMessage, sendMessage, chatboxBool }) => (
+  <form className={chatboxBool === true ? "hide" : "form"} autoComplete="off">
     <input
       className="input"
       type="text"

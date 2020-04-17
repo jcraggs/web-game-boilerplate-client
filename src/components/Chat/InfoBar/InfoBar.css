@@ -4,7 +4,17 @@
   justify-content: space-between;
   background: #2979ff;
   border-radius: 4px 4px 0 0;
-  height: 30px;
+  height: 40px;
+  width: 100%;
+}
+
+.infoBarRound {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2979ff;
+  border-radius: 4px;
+  height: 40px;
   width: 100%;
 }
 
@@ -32,6 +42,7 @@
 
 .exitButton {
   width: 15px;
+  height: 15px;
 }
 
 .roomTitle {

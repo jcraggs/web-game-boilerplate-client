@@ -9,3 +9,7 @@
   overflow: auto;
   flex: auto;
 }
+
+.hide {
+  display: none;
+}
