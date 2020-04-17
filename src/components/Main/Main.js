@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 import queryString from "query-string";
 import io from "socket.io-client";
 
-import InfoBar from "../InfoBar/InfoBar";
-import ChatInput from "../ChatInput/ChatInput";
-import MessageList from "../MessageList/MessageList";
-import OnlineUsers from "../OnlineUsers/OnlineUsers";
+import InfoBar from "../Chat/InfoBar/InfoBar";
+import ChatInput from "../Chat/ChatInput/ChatInput";
+import MessageList from "../Chat/MessageList/MessageList";
+import OnlineUsers from "../Chat/OnlineUsers/OnlineUsers";
+import Game from "../Game/Game";
+import NavBar from "../NavBar/NavBar";
 
-import "./Chat.css";
+import "./Main.css";
 
 let socket;
 
-const Chat = ({ location }) => {
+const Main = ({ location }) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
   const [users, setUsers] = useState("");
@@ -40,7 +42,7 @@ const Chat = ({ location }) => {
               if (isNaN(newArr.slice(-1).pop()) === false) {
                 return nameNum + findNumbers(newArr, nameNum);
               } else
-                return (window.location.href = `/chat?name=${newArr.join("")}${(
+                return (window.location.href = `/game?name=${newArr.join("")}${(
                   Number(nameNum.reverse().join("")) + 1
                 ).toString()}&room=${room}`);
             }
@@ -52,12 +54,12 @@ const Chat = ({ location }) => {
             const nameArr = name.split("");
             findNumbers(nameArr, nameNum);
           } else
-            return (window.location.href = `/chat?name=${name}1&room=${room}`);
+            return (window.location.href = `/game?name=${name}1&room=${room}`);
         }
 
         //Handles no name specified
         if (!name && room) {
-          return (window.location.href = `/chat?name=guest&room=${room}`);
+          return (window.location.href = `/game?name=guest&room=${room}`);
         }
 
         // Handles no room specified
@@ -90,19 +92,24 @@ const Chat = ({ location }) => {
   };
 
   return (
-    <div className="chatOuterContainer">
-      <div className="chatContainer">
-        <InfoBar room={room} />
-        <MessageList messages={messages} name={name} />
-        <ChatInput
-          message={message}
-          setMessage={setMessage}
-          sendMessage={sendMessage}
-        />
+    <div className="mainOuterContainer">
+      <NavBar />
+      <div className="mainInnerContainer">
+        <Game />
+        <div className="chatContainer">
+          <InfoBar room={room} users={users} />
+
+          <MessageList messages={messages} name={name} />
+          <ChatInput
+            message={message}
+            setMessage={setMessage}
+            sendMessage={sendMessage}
+          />
+        </div>
+        <OnlineUsers users={users} />
       </div>
-      <OnlineUsers users={users} />
     </div>
   );
 };
 
-export default Chat;
+export default Main;

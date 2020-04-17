@@ -18,7 +18,7 @@ const Join = () => {
     return (
       <Redirect
         push
-        to={{ pathname: "/chat", search: `name=${name}&room=${room}` }}
+        to={{ pathname: "/game", search: `name=${name}&room=${room}` }}
       />
     );
   }
@@ -34,7 +34,7 @@ const Join = () => {
             type="text"
             onChange={(event) => setName(event.target.value)}
             onKeyDown={(event) => submitform(event)}
-            autocomplete="off"
+            autoComplete="off"
           />
         </div>
         <div>
@@ -44,12 +44,12 @@ const Join = () => {
             type="text"
             onChange={(event) => setRoom(event.target.value)}
             onKeyDown={(event) => submitform(event)}
-            autocomplete="off"
+            autoComplete="off"
           />
         </div>
         <Link
           onClick={(event) => (!name || !room ? event.preventDefault() : null)}
-          to={`/chat?name=${name}&room=${room}`}
+          to={`/game?name=${name}&room=${room}`}
         >
           <button className="button mt-20" type="submit">
             Sign in

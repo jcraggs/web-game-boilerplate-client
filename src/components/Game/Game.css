@@ -1,0 +1,10 @@
+.gameContainer {
+  color: white;
+  text-align: center;
+  background-color: red;
+  min-height: 50vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}

@@ -1,0 +1,11 @@
+/* This class is the scroll to bottom chat box */
+.css-13azwyo.messages {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.messages {
+  padding: 15px 0;
+  overflow: auto;
+  flex: auto;
+}

@@ -1,9 +1,11 @@
-.chatOuterContainer {
+.mainOuterContainer {
+  height: 100%;
+}
+
+.mainInnerContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50%;
-  padding-top: 40px;
 }
 
 .chatContainer {
@@ -12,25 +14,16 @@
   justify-content: space-between;
   background: #ffffff;
   border-radius: 8px;
-  height: 100%;
   width: 35%;
+  height: 250px;
+  margin-top: 5px;
 }
-
-/* @media (min-width: 320px) and (max-width: 480px) {
-  .chatOuterContainer {
-    height: 100%;
-  }
-
-  .chatContainer {
-    width: 100%;
-    height: 100%;
-  }
-} */
 
 /* Mobiles */
 @media (min-width: 0px) and (max-width: 1200px) {
   .chatContainer {
     width: 90%;
+    height: 30vh;
   }
 }
 

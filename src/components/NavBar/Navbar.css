@@ -1,0 +1,50 @@
+.navBarContainer {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.burgerIcon {
+  width: 30px;
+  margin-right: 5%;
+}
+
+.backArrow {
+  width: 30px;
+  margin-left: 5%;
+}
+
+/* Mobiles */
+@media (min-width: 0px) and (max-width: 1200px) {
+  .burgerIcon {
+    margin-right: 5%;
+  }
+
+  .backArrow {
+    margin-left: 5%;
+  }
+}
+
+/* Midscreen */
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .burgerIcon {
+    margin-right: 15%;
+  }
+
+  .backArrow {
+    margin-left: 15%;
+  }
+}
+
+/* Widescreen */
+@media (min-width: 1501px) {
+  .burgerIcon {
+    margin-right: 20%;
+  }
+
+  .backArrow {
+    margin-left: 20%;
+  }
+}
