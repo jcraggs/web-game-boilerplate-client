@@ -27,7 +27,7 @@ const InfoBar = ({ room, users, chatboxBool, dropChat }) => (
     </div>
     <div className="rightInnerContainer">
       <img
-        className="exitButton"
+        className="toggleChat"
         src={chatboxBool ? openIcon : closeIcon}
         alt="close chat"
         onClick={() => dropChat(chatboxBool)}

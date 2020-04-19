@@ -8,6 +8,7 @@ import MessageList from "../Chat/MessageList/MessageList";
 // import OnlineUsers from "../Chat/OnlineUsers/OnlineUsers";
 import Game from "../Game/Game";
 import NavBar from "../NavBar/NavBar";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 import "./Main.css";
 
@@ -20,6 +21,7 @@ const Main = ({ location }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [chatboxBool, hideChat] = useState(false);
+  const [burgerMenuBool, hideBurgerMenu] = useState(false);
   const ENDPOINT = "localhost:5000";
 
   useEffect(() => {
@@ -96,10 +98,21 @@ const Main = ({ location }) => {
     hideChat(!chatboxBool);
   };
 
+  const toggleBurgerMenu = (burgerMenuBool) => {
+    hideBurgerMenu(!burgerMenuBool);
+  };
+
   return (
     <div className="mainOuterContainer">
-      <NavBar />
+      <NavBar
+        burgerMenuBool={burgerMenuBool}
+        toggleBurgerMenu={toggleBurgerMenu}
+      />
       <div className="mainInnerContainer">
+        <BurgerMenu
+          burgerMenuBool={burgerMenuBool}
+          toggleBurgerMenu={toggleBurgerMenu}
+        />
         <Game />
         <div className={chatboxBool ? "hidden" : "chatContainer"}>
           <InfoBar

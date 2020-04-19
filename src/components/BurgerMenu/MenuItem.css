@@ -1,0 +1,21 @@
+.menuItemContainer {
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.toggleButton {
+  height: 15px;
+  width: 15px;
+  margin: 15px;
+  /* margin-right: 15px; */
+}
+
+.subMenuTitle {
+  margin: 0;
+  margin-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
