@@ -8,6 +8,9 @@
   align-items: center;
   justify-content: space-between;
   height: 90vh;
+  background-color: #2b2b2f;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .chatContainer {
@@ -18,7 +21,6 @@
   border-radius: 8px;
   width: 35%;
   height: 250px;
-  margin-top: 5px;
 }
 
 .hidden {
@@ -36,7 +38,8 @@
 @media (min-width: 0px) and (max-width: 1200px) {
   .chatContainer {
     width: 90%;
-    height: 27.5vh;
+    /* height: 27.5vh; */
+    height: 35vh;
   }
   .hidden {
     width: 90%;

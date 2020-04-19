@@ -13,7 +13,7 @@ const MenuItem = ({ title, content }) => {
   return (
     <div className="menuItemOuterContainer">
       <div className="menuItemContainer">
-        <h3 className="subMenuTitle">{title}</h3>
+        <p className="subMenuTitle">{title}</p>
         <img
           className="toggleButton"
           src={subMenuBool ? openIcon : closeIcon}

@@ -5,16 +5,6 @@ import onlineIcon from "../../../icons/onlineIcon.png";
 import offlineIcon from "../../../icons/offlineIcon.png";
 import "./InfoBar.css";
 
-const userList = (users) => {
-  const userList = [];
-  if (users) {
-    users.forEach((item) => {
-      userList.push(item.name);
-    });
-  }
-  return userList.join(", ");
-};
-
 const InfoBar = ({ room, users, chatboxBool, dropChat }) => (
   <div className={chatboxBool ? "infoBarRound" : "infoBar"}>
     <div className="leftInnerContainer">
@@ -23,7 +13,7 @@ const InfoBar = ({ room, users, chatboxBool, dropChat }) => (
         src={users ? onlineIcon : offlineIcon}
         alt="online status"
       />
-      <h3 className="roomTitle">Players: {userList(users)}</h3>
+      <h3 className="roomTitle">Room: {room}</h3>
     </div>
     <div className="rightInnerContainer">
       <img

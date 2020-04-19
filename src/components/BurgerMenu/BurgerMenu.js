@@ -2,8 +2,11 @@ import React from "react";
 import xIcon from "../../icons/xIcon.png";
 import "./BurgerMenu.css";
 import MenuItem from "./MenuItem";
+import OnlineUsers from "./MenuContent/OnlineUsers/OnlineUsers";
+import HowToPlay from "./MenuContent/HowToPlay/HowToPlay";
+import ControlList from "./MenuContent/ControlList/ControlList";
 
-const BurgerMenu = ({ burgerMenuBool, toggleBurgerMenu }) => (
+const BurgerMenu = ({ burgerMenuBool, toggleBurgerMenu, users }) => (
   <div className={burgerMenuBool ? "menuContainer" : "hiddenBM"}>
     <div className="titleBar">
       <div className="xIcon"></div>
@@ -16,9 +19,12 @@ const BurgerMenu = ({ burgerMenuBool, toggleBurgerMenu }) => (
       />
     </div>
     <div className="menuContent">
-      <MenuItem title={"Current Players"} content={"test"}></MenuItem>
-      <MenuItem title={"How to play"} content={"test"}></MenuItem>
-      <MenuItem title={"Game Rules"} content={"test"}></MenuItem>
+      <MenuItem
+        title={"Current Players"}
+        content={<OnlineUsers users={users} />}
+      ></MenuItem>
+      <MenuItem title={"How to play"} content={<HowToPlay />}></MenuItem>
+      <MenuItem title={"Controls"} content={<ControlList />}></MenuItem>
     </div>
   </div>
 );

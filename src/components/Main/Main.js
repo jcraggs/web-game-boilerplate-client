@@ -112,6 +112,7 @@ const Main = ({ location }) => {
         <BurgerMenu
           burgerMenuBool={burgerMenuBool}
           toggleBurgerMenu={toggleBurgerMenu}
+          users={users}
         />
         <Game />
         <div className={chatboxBool ? "hidden" : "chatContainer"}>

@@ -26,11 +26,11 @@ const Join = () => {
   return (
     <div className="joinOuterContainer">
       <div className="joinInnerContainer">
-        <h1 className="heading">Join the fun</h1>
+        <h1 className="heading">Join the fun!</h1>
         <div>
           <input
             placeholder="Name"
-            className="joinInput"
+            className="joinInput mt-20"
             type="text"
             onChange={(event) => setName(event.target.value)}
             onKeyDown={(event) => submitform(event)}

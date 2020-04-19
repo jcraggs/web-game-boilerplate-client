@@ -1,0 +1,32 @@
+.controlListContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  font-size: 0.9em;
+  margin: 0;
+  padding-right: 5px;
+}
+
+h1 {
+  padding-bottom: 5px;
+}
+.actionList {
+  width: 50%;
+}
+
+.keyList {
+  width: 50%;
+}
