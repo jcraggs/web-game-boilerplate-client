@@ -10,7 +10,7 @@ Current features of the web app:
 
 - Quick and easy method of joining game rooms, no need for accounts or signing up!
 - Real time messaging component, hideable by clicking on the drop down arrow.
-- Built in, componentised burger menu; easy to expand upon based on future needs. The menu comes with three example tabs:
+- Built in, componentised burger menu; easy to expand upon based on future needs. The menu comes with three example dropdowns:
   - A list of all the current players in the room
   - A text based tab of game rules
   - A dual column style tab of game controls
