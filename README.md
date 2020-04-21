@@ -1,6 +1,6 @@
 # Multiplayer web game application: boilerplate code - Client side
 
-**The example web application is hosted here: https://xxxxxxxx.netlify.com/**
+**The example web application is hosted here: https://[INSERT LINK].netlify.com/**
 
 This repo comprises the client side of a multiplayer web game web platform. This project has been built to act as boilerplate for others to use for making their own games. It has been written using React, Socket.io and Node.js.
 
