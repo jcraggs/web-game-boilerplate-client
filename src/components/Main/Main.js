@@ -5,7 +5,6 @@ import io from "socket.io-client";
 import InfoBar from "../Chat/InfoBar/InfoBar";
 import ChatInput from "../Chat/ChatInput/ChatInput";
 import MessageList from "../Chat/MessageList/MessageList";
-// import OnlineUsers from "../Chat/OnlineUsers/OnlineUsers";
 import Game from "../Game/Game";
 import NavBar from "../NavBar/NavBar";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
@@ -134,7 +133,6 @@ const Main = ({ location }) => {
             chatboxBool={chatboxBool}
           />
         </div>
-        {/* <OnlineUsers users={users} /> */}
       </div>
     </div>
   );
