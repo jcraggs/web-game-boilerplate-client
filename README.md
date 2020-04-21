@@ -14,7 +14,7 @@ Current features of the web app:
   - A dual column style tab of game controls
 - Responsive design, working well in both desktop and mobile devices.
 
-The messaging component of this application has been built with the help of the following tutorial: https://www.youtube.com/watch?v=ZwFA3YMfkoc by [Adrian Hajdin](https://github.com/adrianhajdin/project_chat_application). Watching the video is highly recommended in order to help you understand websockets and how they can be leveraged for a multiplayer game component.
+The messaging component of this application has been built with the help of [this tutorial](https://www.youtube.com/watch?v=ZwFA3YMfkoc) by [Adrian Hajdin](https://github.com/adrianhajdin/project_chat_application). Watching the video is highly recommended in order to help you understand websockets and how they can be leveraged for a multiplayer game component.
 
 The example web application is hosted here: https://xxxxxxxx.netlify.com/
 
