@@ -2,7 +2,7 @@
 
 This repo comprises the client side of a multiplayer web game web platform. This project has been built to act as boilerplate for others to use for making their own games. It has been written using React, Socket.io and Node.js.
 
-In order for the websockets to work, the client side relies on the server side. You will need to clone and 'npm start' the server side aspect of this project from here: https://github.com/jcraggs/XXXXX
+In order for the websockets to work, the client side relies on the server side. You will need to clone and 'npm start' the server side aspect of this project from here: https://github.com/jcraggs/web-game-boilerplate-server
 
 Current features of the web app:
 
@@ -16,7 +16,7 @@ Current features of the web app:
 
 The messaging component of this application has been built with the help of [this tutorial](https://www.youtube.com/watch?v=ZwFA3YMfkoc) by [Adrian Hajdin](https://github.com/adrianhajdin/project_chat_application). Watching the video is highly recommended in order to help you understand websockets and how they can be leveraged for a multiplayer game component.
 
-The example web application is hosted here: https://xxxxxxxx.netlify.com/
+**The example web application is hosted here: https://xxxxxxxx.netlify.com/**
 
 Note the application has been built with Chrome on desktop and Safari on iOS. Performance on other browsers and devices has not been tested.
 
@@ -26,11 +26,11 @@ This repo is for people who have moderate experience of React and don't want to 
 
 ## To run this project locally:
 
-1. Click on the repo's "Clone or Download" button link and copy the URL (https://github.com/jcraggs/XXXXXXX.git)
+1. Click on the repo's "Clone or Download" button link and copy the URL (https://github.com/jcraggs/web-game-boilerplate-client.git)
 2. Navigate to where you'd like the application to be copied in your command line and write:
 
    ```
-   git clone https://github.com/jcraggs/XXXXXXX.git
+   git clone https://github.com/jcraggs/web-game-boilerplate-client.git
    ```
 
 3. Navigate to the newly-created folder in your command line interface and type `npm install` to install all dependencies.
