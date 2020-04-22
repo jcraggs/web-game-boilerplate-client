@@ -12,6 +12,7 @@
 
 .joinInnerContainer {
   width: 90%;
+  max-width: 250px;
 }
 
 .joinInput {
@@ -41,20 +42,6 @@
 
 .mt-20 {
   margin-top: 20px;
-}
-
-/* Mobiles */
-@media (min-width: 0px) and (max-width: 700px) {
-  .joinInnerContainer {
-    width: 90%;
-  }
-}
-
-/* Midscreen */
-@media (min-width: 701px) {
-  .joinInnerContainer {
-    width: 60vw;
-  }
 }
 
 button:focus {
