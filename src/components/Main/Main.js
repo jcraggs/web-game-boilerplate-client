@@ -21,7 +21,8 @@ const Main = ({ location }) => {
   const [messages, setMessages] = useState([]);
   const [chatboxBool, hideChat] = useState(false);
   const [burgerMenuBool, hideBurgerMenu] = useState(false);
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT =
+    "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);

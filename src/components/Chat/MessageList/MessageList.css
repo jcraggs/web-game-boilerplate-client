@@ -2,6 +2,7 @@
 .css-13azwyo.messages {
   padding-top: 5px;
   padding-bottom: 5px;
+  max-height: 20vh;
 }
 
 .messages {
