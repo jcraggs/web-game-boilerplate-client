@@ -6,7 +6,10 @@ import offlineIcon from "../../../icons/offlineIcon.png";
 import "./InfoBar.css";
 
 const InfoBar = ({ room, users, chatboxBool, dropChat }) => (
-  <div className={chatboxBool ? "infoBarRound" : "infoBar"}>
+  <div
+    className={chatboxBool ? "infoBarRound" : "infoBar"}
+    onClick={() => dropChat(chatboxBool)}
+  >
     <div className="leftInnerContainer">
       <img
         className="onlineIcon"

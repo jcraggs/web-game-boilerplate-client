@@ -11,7 +11,10 @@ const MenuItem = ({ title, content }) => {
   };
 
   return (
-    <div className="menuItemOuterContainer">
+    <div
+      className="menuItemOuterContainer"
+      onClick={() => showOrHide(subMenuBool)}
+    >
       <div className="menuItemContainer">
         <p className="subMenuTitle">{title}</p>
         <img
