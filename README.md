@@ -37,6 +37,8 @@ This repo is for people who have moderate experience of React and don't want to 
 
 4. To run the client side, simply type the comment `npm start`.
 
+5. In order to link the client side to your back end make sure to correctly define the `ENDPOINT` constant in the Main.js file. It should be "localhost:5000" if you are using your locally hosted back end or the url where the back end has been hosted online (e.g. on Heroku).
+
 ## React App component structure:
 
 ```raw
