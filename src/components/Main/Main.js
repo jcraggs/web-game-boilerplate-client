@@ -8,6 +8,7 @@ import MessageList from "../Chat/MessageList/MessageList";
 import Game from "../Game/Game";
 import NavBar from "../NavBar/NavBar";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import RoomFull from "../RoomFull/RoomFull";
 
 import "./Main.css";
 
@@ -21,6 +22,8 @@ const Main = ({ location }) => {
   const [messages, setMessages] = useState([]);
   const [chatboxBool, hideChat] = useState(false);
   const [burgerMenuBool, hideBurgerMenu] = useState(false);
+  const [showContentBool, showContent] = useState(false); // Change showContentBool to true to allow development on mobile when hosting server locally
+
   const ENDPOINT =
     "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
 
@@ -85,6 +88,14 @@ const Main = ({ location }) => {
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
+    socket.on("redirect", function (destination) {
+      setTimeout(function () {
+        window.location.href = destination;
+      }, 60000);
+    });
+    socket.on("allowEntry", function (entryStatus) {
+      showContent(true);
+    });
   }, []);
 
   const sendMessage = (event) => {
@@ -102,41 +113,43 @@ const Main = ({ location }) => {
     hideBurgerMenu(!burgerMenuBool);
   };
 
-  return (
-    <div className="mainOuterContainer">
-      <NavBar
-        burgerMenuBool={burgerMenuBool}
-        toggleBurgerMenu={toggleBurgerMenu}
-      />
-      <div className="mainInnerContainer">
-        <BurgerMenu
+  if (showContentBool) {
+    return (
+      <div className="mainOuterContainer">
+        <NavBar
           burgerMenuBool={burgerMenuBool}
           toggleBurgerMenu={toggleBurgerMenu}
-          users={users}
         />
-        <Game />
-        <div className={chatboxBool ? "hidden" : "chatContainer"}>
-          <InfoBar
-            room={room}
+        <div className="mainInnerContainer">
+          <BurgerMenu
+            burgerMenuBool={burgerMenuBool}
+            toggleBurgerMenu={toggleBurgerMenu}
             users={users}
-            chatboxBool={chatboxBool}
-            dropChat={dropChat}
           />
-          <MessageList
-            messages={messages}
-            name={name}
-            chatboxBool={chatboxBool}
-          />
-          <ChatInput
-            message={message}
-            setMessage={setMessage}
-            sendMessage={sendMessage}
-            chatboxBool={chatboxBool}
-          />
+          <Game />
+          <div className={chatboxBool ? "hidden" : "chatContainer"}>
+            <InfoBar
+              room={room}
+              users={users}
+              chatboxBool={chatboxBool}
+              dropChat={dropChat}
+            />
+            <MessageList
+              messages={messages}
+              name={name}
+              chatboxBool={chatboxBool}
+            />
+            <ChatInput
+              message={message}
+              setMessage={setMessage}
+              sendMessage={sendMessage}
+              chatboxBool={chatboxBool}
+            />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else return <RoomFull />;
 };
 
 export default Main;
