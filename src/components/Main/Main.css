@@ -64,7 +64,7 @@
 /* Wide screen */
 @media (min-width: 1501px) {
   .chatContainer {
-    height: 40%;
+    height: 50%;
     width: 75%;
   }
 

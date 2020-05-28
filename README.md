@@ -10,6 +10,7 @@ Current features of the web app:
 
 - Quick and easy method of joining game rooms, no need for accounts or signing up!
 - Real time messaging component, hideable by clicking on the drop down arrow.
+- Ability to control number of user connections per room (default is 10)
 - Built in, componentised burger menu; easy to expand upon based on future needs. The menu comes with three example dropdowns:
   - A list of all the current players in the room
   - A text based tab of game rules
@@ -41,7 +42,7 @@ This repo is for people who have moderate experience of React and don't want to 
 
 In order to link the client side to your back end make sure to correctly define the `ENDPOINT` constant in the Main.js file. It should be "localhost:5000" if you are using your locally hosted back end or the url where the back end has been hosted online (e.g. on Heroku).
 
-In order to view development features on a mobile device (by navigating to the locally hosted react app 192.168.1.\*\*\*:3000 ip address) when hosting the back end locally you'll have to overwrite the `showContentBool` to true.
+In order to view development features on a mobile device (by navigating to the locally hosted react app 192.168.1.\*\*\*:3000 ip address) when hosting the back end locally you'll have to overwrite the `showContentBool` to true and the `loading` to false in the Main.js file. If you don't do this it will hang on the loading spinner as the sockets won't be working.
 
 ## React App component structure:
 
@@ -49,6 +50,10 @@ In order to view development features on a mobile device (by navigating to the l
 App                      --> Where our two routes are defined
 │
 ├── Join                 --> Landing page when a user first visits the site
+│
+├── RoomFull             --> Pop-up modal for when a user attemps to join a full room
+│
+├── Loading              --> Small spinner for when the app is transitioning from login to the main page
 │
 ├── Main                 --> The main component for our app once a user has joined a room
 │
