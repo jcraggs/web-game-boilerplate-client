@@ -26,10 +26,9 @@ const Main = ({ location }) => {
   const [loading, setLoadingStatus] = useState(true); // Change to false to allow development on mobile when hosting server locally
   const [showContentBool, showContent] = useState(false); // Change to true to allow development on mobile when hosting server locally
   const [gameData, setGameData] = useState({});
-  // const ENDPOINT =
-  //   "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
 
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT =
+    "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
