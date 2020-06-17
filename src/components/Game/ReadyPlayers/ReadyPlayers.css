@@ -1,0 +1,98 @@
+.readyIndicator {
+  min-width: 15px;
+  min-height: 15px;
+  max-width: 15px;
+  max-height: 15px;
+  background-color: rgba(70, 63, 63, 0.616);
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.readyUsersContainer {
+  margin: 10px;
+  margin-bottom: 0px;
+  height: calc(100% - 20px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.gameLobbyTitle {
+  font-size: 16pt;
+  margin-bottom: 5px;
+}
+
+.readyUserInnerContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.readyUsersList {
+  height: 100%;
+  min-width: 150px;
+  padding-right: 5px;
+}
+
+.readyUserButtons {
+  display: flex;
+  flex-direction: column;
+  max-width: 170px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.playerName {
+  display: flex;
+  font-size: 13pt;
+}
+
+.playerNameText {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.openSlot {
+  color: rgba(70, 63, 63, 0.616);
+}
+
+.readyButton {
+  all: unset;
+  background-color: #eee1e1;
+  padding: 2.5px;
+  border: 2px solid #363636;
+  border-radius: 5px;
+  min-height: 60px;
+  width: calc(100% - 10px);
+  max-width: 200px;
+}
+
+.readyButton:active {
+  background-color: #a7a5a5;
+}
+
+.startButton {
+  all: unset;
+  background-color: #eee1e1;
+  padding: 2.5px;
+  border: 2px solid #363636;
+  border-radius: 5px;
+  min-height: 60px;
+  width: calc(100% - 10px);
+  max-width: 200px;
+}
+
+.startButton:active {
+  background-color: #a7a5a5;
+}
+
+.startButton:disabled {
+  color: grey;
+  border: 2px solid #626262;
+  width: calc(100% - 10px);
+  max-width: 200px;
+}
+
+.waitingMessage {
+  min-height: 70px;
+  font-size: 14pt;
+}

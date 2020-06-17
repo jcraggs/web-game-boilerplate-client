@@ -1,12 +1,41 @@
 import React from "react";
-import gameIcon from "../../icons/gameIcon.png";
 import "./Game.css";
+import ReadyPlayers from "./ReadyPlayers/ReadyPlayers";
 
-const Game = () => (
-  <div className="gameContainer">
-    <img className="gameIcon" src={gameIcon} alt="game pad" />
-    <h1>This is a placeholder component.</h1>
-  </div>
-);
+const Game = ({
+  users,
+  name,
+  readyPlayer,
+  chatboxBool,
+  startGame,
+  gameData,
+}) => {
+  let gameStarted = gameData.gameStarted;
+
+  return (
+    <div className={chatboxBool ? "gameContainerLarge" : "gameContainer"}>
+      {users ? (
+        <div className="gameboxContent">
+          {gameStarted !== true ? (
+            <ReadyPlayers
+              users={users}
+              name={name}
+              readyPlayer={readyPlayer}
+              startGame={startGame}
+            ></ReadyPlayers>
+          ) : (
+            <p style={{ margin: "10px" }}>
+              Game started: put your actual game component here
+            </p>
+          )}
+        </div>
+      ) : (
+        <div className="activeContainer">
+          <p className="noPlayers"> Server error: No users found</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Game;

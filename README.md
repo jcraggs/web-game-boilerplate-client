@@ -10,6 +10,7 @@ Current features of the web app:
 
 - Quick and easy method of joining game rooms, no need for accounts or signing up!
 - Real time messaging component, hideable by clicking on the drop down arrow.
+- A lobby for players to gather in prior to the game start
 - Ability to control number of user connections per room (default is 10)
 - Built in, componentised burger menu; easy to expand upon based on future needs. The menu comes with three example dropdowns:
   - A list of all the current players in the room
@@ -66,7 +67,8 @@ App                      --> Where our two routes are defined
 │        ├── HowToPlay   --> Text component explaining the rules of the game
 │        └── OnlineUsers --> List component showing the players currently online
 │
-├── Game                 --> The game component placeholder for other projects to edit
+├── Game                 --> The game component made by other projects should go in here
+│   └── ReadyPlayers     --> A lobby for players to gather in prior to the start of the game
 │
 └── Chat
     ├── InfoBar          --> Shows the current room and an online indicator, is a hideable element

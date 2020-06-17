@@ -25,9 +25,11 @@ const Main = ({ location }) => {
   const [burgerMenuBool, hideBurgerMenu] = useState(false);
   const [loading, setLoadingStatus] = useState(true); // Change to false to allow development on mobile when hosting server locally
   const [showContentBool, showContent] = useState(false); // Change to true to allow development on mobile when hosting server locally
+  const [gameData, setGameData] = useState({});
+  // const ENDPOINT =
+  //   "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
 
-  const ENDPOINT =
-    "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
+  const ENDPOINT = "localhost:5000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -79,7 +81,7 @@ const Main = ({ location }) => {
 
     return () => {
       socket.emit("disconnect");
-      socket.off();
+      socket.disconnect();
     };
   }, [ENDPOINT, location.search]);
 
@@ -96,6 +98,9 @@ const Main = ({ location }) => {
     socket.on("allowEntry", function (entryStatus) {
       setLoadingStatus(false);
       showContent(entryStatus);
+    });
+    socket.on("gameData", (gameDataObj) => {
+      setGameData(gameDataObj);
     });
   }, []);
 
@@ -114,6 +119,16 @@ const Main = ({ location }) => {
     hideBurgerMenu(!burgerMenuBool);
   };
 
+  const readyPlayer = (event, name) => {
+    event.preventDefault();
+    socket.emit("readyPlayer", name, users);
+  };
+
+  const startGame = () => {
+    socket.emit("startGame");
+    console.log(gameData);
+  };
+
   if (loading !== true) {
     if (showContentBool) {
       return (
@@ -128,7 +143,14 @@ const Main = ({ location }) => {
               toggleBurgerMenu={toggleBurgerMenu}
               users={users}
             />
-            <Game />
+            <Game
+              users={users}
+              name={name}
+              readyPlayer={readyPlayer}
+              chatboxBool={chatboxBool}
+              startGame={startGame}
+              gameData={gameData}
+            />
             <div className={chatboxBool ? "hidden" : "chatContainer"}>
               <InfoBar
                 room={room}
