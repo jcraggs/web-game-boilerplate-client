@@ -32,14 +32,13 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame }) => {
 
   if (users) {
     users.forEach((user) => {
-      if (user.name === name) return (localPlayer = user);
+      if (user.name === name.toLowerCase()) return (localPlayer = user);
     });
   }
 
   return (
     <div className="readyUsersContainer">
       <p className="gameLobbyTitle">
-        {" "}
         {users[0].name.charAt(0).toUpperCase() + users[0].name.slice(1)}'s lobby
       </p>
       <div className="readyUserInnerContainer">
