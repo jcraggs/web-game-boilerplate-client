@@ -1,12 +1,13 @@
 .readyIndicator {
-  min-width: 15px;
-  min-height: 15px;
-  max-width: 15px;
-  max-height: 15px;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
   background-color: rgba(70, 63, 63, 0.616);
   border-radius: 15px;
   border: 1px solid black;
   margin-right: 10px;
+  align-self: center;
 }
 
 .readyUsersContainer {
@@ -44,15 +45,19 @@
 .playerName {
   display: flex;
   font-size: 13pt;
+  height: 20px;
 }
 
 .playerNameText {
   overflow-x: hidden;
   max-width: 100%;
+  margin-top: 2px;
 }
 
 .openSlot {
   color: rgba(70, 63, 63, 0.616);
+  margin-top: 2px;
+  max-width: 100%;
 }
 
 .readyButton {
