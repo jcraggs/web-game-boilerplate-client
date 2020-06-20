@@ -39,6 +39,12 @@
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 5px;
+  cursor: pointer;
+}
+
+.xIcon:active {
+  filter: invert(66%) sepia(0%) saturate(3429%) hue-rotate(139deg)
+    brightness(105%) contrast(81%);
 }
 
 .menuContent {

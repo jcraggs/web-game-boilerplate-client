@@ -29,6 +29,11 @@ select:focus {
   width: 21%;
   font-size: 0.8em;
   border-bottom-right-radius: 8px;
+  cursor: pointer;
+}
+
+.sendButton:active {
+  background: #2f68c4;
 }
 
 .hide {

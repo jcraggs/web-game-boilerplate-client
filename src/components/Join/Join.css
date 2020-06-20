@@ -38,6 +38,11 @@
   display: inline-block;
   border: none;
   width: 100%;
+  cursor: pointer;
+}
+
+.button:active {
+  background: #2f68c4;
 }
 
 .mt-20 {

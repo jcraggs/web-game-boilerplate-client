@@ -5,6 +5,11 @@
   justify-content: space-between;
   width: 100%;
   box-shadow: inset -1px 2px 0px -1px #3f3d3d;
+  cursor: pointer;
+}
+
+.menuItemContainer:active {
+  background-color: #4f4f4f;
 }
 
 .toggleButton {

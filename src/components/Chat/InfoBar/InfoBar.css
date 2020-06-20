@@ -6,6 +6,11 @@
   border-radius: 4px 4px 0 0;
   height: 40px;
   width: 100%;
+  cursor: pointer;
+}
+
+.infoBar:active {
+  background: #2f68c4;
 }
 
 .infoBarRound {
@@ -16,6 +21,11 @@
   border-radius: 4px;
   height: 40px;
   width: 100%;
+  cursor: pointer;
+}
+
+.infoBarRound:active {
+  background: #2f68c4;
 }
 
 .leftInnerContainer {

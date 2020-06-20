@@ -12,11 +12,22 @@
 .burgerIcon {
   width: 30px;
   margin-right: 5%;
+  cursor: pointer;
+}
+
+.burgerIcon:active {
+  filter: invert(66%) sepia(0%) saturate(3429%) hue-rotate(139deg)
+    brightness(105%) contrast(81%);
 }
 
 .backArrow {
   width: 30px;
   margin-left: 5%;
+}
+
+.backArrow:active {
+  filter: invert(66%) sepia(0%) saturate(3429%) hue-rotate(139deg)
+    brightness(105%) contrast(81%);
 }
 
 /* Mobiles */

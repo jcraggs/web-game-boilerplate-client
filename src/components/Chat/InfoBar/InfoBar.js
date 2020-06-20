@@ -16,7 +16,7 @@ const InfoBar = ({ room, users, chatboxBool, dropChat }) => (
         src={users ? onlineIcon : offlineIcon}
         alt="online status"
       />
-      <h3 className="roomTitle">Room: {room}</h3>
+      <h3 className="roomTitle">Chat (room: {room})</h3>
     </div>
     <div className="rightInnerContainer">
       <img

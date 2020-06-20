@@ -21,7 +21,7 @@ const Main = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [chatboxBool, hideChat] = useState(false);
+  const [chatboxBool, hideChat] = useState(true);
   const [burgerMenuBool, hideBurgerMenu] = useState(false);
   const [loading, setLoadingStatus] = useState(true); // Change to false to allow development on mobile when hosting server locally
   const [showContentBool, showContent] = useState(false); // Change to true to allow development on mobile when hosting server locally
