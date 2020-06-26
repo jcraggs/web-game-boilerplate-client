@@ -27,8 +27,10 @@ const Main = ({ location }) => {
   const [showContentBool, showContent] = useState(false); // Change to true to allow development on mobile when hosting server locally
   const [gameData, setGameData] = useState({});
 
-  const ENDPOINT =
-    "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
+  // const ENDPOINT =
+  //   "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
+
+  const ENDPOINT = "localhost:5000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -40,6 +42,12 @@ const Main = ({ location }) => {
 
     socket.emit("join", { name, room }, (error) => {
       if (error) {
+        // Redirects when names or rooms are >10 characters long, only possible with url manipulation
+        if (error.status === 401) {
+          setLoadingStatus(true);
+          return (window.location.href = `/`);
+        }
+
         // Handles users with the same name
         if (name && room) {
           const findNumbers = (nameArray, nameNum) => {
@@ -93,6 +101,7 @@ const Main = ({ location }) => {
     });
     socket.on("roomFull", function () {
       setLoadingStatus(false);
+      // return (window.location.href = `/`);
     });
     socket.on("allowEntry", function (entryStatus) {
       setLoadingStatus(false);
@@ -149,6 +158,7 @@ const Main = ({ location }) => {
               chatboxBool={chatboxBool}
               startGame={startGame}
               gameData={gameData}
+              room={room}
             />
             <div className={chatboxBool ? "hidden" : "chatContainer"}>
               <InfoBar

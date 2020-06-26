@@ -1,7 +1,8 @@
 import React from "react";
 import "./ReadyPlayers.css";
+import share from "../../../icons/share.png";
 
-const ReadyPlayers = ({ users, name, readyPlayer, startGame }) => {
+const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
   let localPlayer = {};
   let everybodyReady = false;
   let openSlots = users[0].roomSizeLimit - users.length;
@@ -12,6 +13,13 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame }) => {
       openSlotsArr.push(i);
     }
     return openSlotsArr;
+  };
+
+  const getShareableLink = (room) => {
+    const currentURL = window.location.href;
+    let splitURL = currentURL.split("/game?")[0];
+    let shareableLink = splitURL + `/?sharedRoom=${room}`;
+    return shareableLink;
   };
 
   let divCountForSlots = createOpenSlotsDiv(openSlotsArr, openSlots);
@@ -107,23 +115,39 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame }) => {
                     startGame(event);
                   }}
                 >
-                  Click here to start game
+                  Start game
                 </button>
               ) : (
-                <p className="waitingMessage">
-                  Waiting for everyone to ready...
-                </p>
+                <div style={{ height: "65px", width: "100px" }}></div>
               )}
             </div>
           ) : (
             <div
               style={localPlayer.ready === true ? {} : { visibility: "hidden" }}
             >
-              <p className="waitingMessage">Waiting for host to start...</p>
+              <div style={{ height: "65px", width: "100px" }}></div>
             </div>
           )}
         </div>
       </div>
+
+      <div className="lobbyWaitingStatus">
+        {everybodyReady === true ? (
+          <p className="waitingMessage">Waiting for host to start...</p>
+        ) : (
+          <p className="waitingMessage">Waiting for everyone to ready...</p>
+        )}
+      </div>
+
+      <button
+        className="shareLinkButton"
+        onClick={() => navigator.clipboard.writeText(getShareableLink(room))}
+      >
+        <div className="shareLinkContents">
+          <img className="shareLinkIcon" src={share} alt="share room link" />
+          Invite friends!
+        </div>
+      </button>
     </div>
   );
 };

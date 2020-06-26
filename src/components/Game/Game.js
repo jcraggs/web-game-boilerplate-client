@@ -9,6 +9,7 @@ const Game = ({
   chatboxBool,
   startGame,
   gameData,
+  room,
 }) => {
   let gameStarted = gameData.gameStarted;
 
@@ -22,6 +23,7 @@ const Game = ({
               name={name}
               readyPlayer={readyPlayer}
               startGame={startGame}
+              room={room}
             ></ReadyPlayers>
           ) : (
             <p style={{ margin: "10px" }}>
