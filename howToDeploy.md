@@ -60,3 +60,5 @@ netlify deploy
 ```bash
 netlify deploy --prod
 ```
+
+After running the `netlify deploy` or `netlify deploy --prod` commands you will be prompted for a publish directory, this should be `./build`.
