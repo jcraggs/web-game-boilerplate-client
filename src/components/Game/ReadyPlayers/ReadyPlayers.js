@@ -19,7 +19,9 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
     const currentURL = window.location.href;
     let splitURL = currentURL.split("/game?")[0];
     let shareableLink = splitURL + `/?sharedRoom=${room}`;
-    return shareableLink;
+    if (shareableLink !== undefined) {
+      return shareableLink;
+    } else return "";
   };
 
   let divCountForSlots = createOpenSlotsDiv(openSlotsArr, openSlots);
@@ -145,7 +147,7 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
       >
         <div className="shareLinkContents">
           <img className="shareLinkIcon" src={share} alt="share room link" />
-          Invite friends!
+          <p className="shareLinkButtonText">Invite friends!</p>
         </div>
       </button>
     </div>
