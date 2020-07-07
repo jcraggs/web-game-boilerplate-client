@@ -4,9 +4,14 @@ import Join from "./components/Join/Join";
 import Main from "./components/Main/Main";
 import "./App.css";
 
-// This along with the CSS properly sizes the viewport of mobile browsers
+// This along with the CSS properly sizes the viewport for devices
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty("--vh", `${vh}px`);
+const recalculateWindowSize = () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+};
+window.onresize = recalculateWindowSize;
 
 const App = () => {
   return (
