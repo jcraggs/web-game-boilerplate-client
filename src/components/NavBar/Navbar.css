@@ -11,7 +11,7 @@
 
 .burgerIcon {
   width: 30px;
-  margin-right: 5%;
+  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -22,43 +22,10 @@
 
 .backArrow {
   width: 30px;
-  margin-left: 5%;
+  margin-left: 10px;
 }
 
 .backArrow:active {
   filter: invert(66%) sepia(0%) saturate(3429%) hue-rotate(139deg)
     brightness(105%) contrast(81%);
-}
-
-/* Mobiles */
-@media (min-width: 0px) and (max-width: 1200px) {
-  .burgerIcon {
-    margin-right: 5%;
-  }
-
-  .backArrow {
-    margin-left: 5%;
-  }
-}
-
-/* Midscreen */
-@media (min-width: 1200px) and (max-width: 1500px) {
-  .burgerIcon {
-    margin-right: 10%;
-  }
-
-  .backArrow {
-    margin-left: 10%;
-  }
-}
-
-/* Widescreen */
-@media (min-width: 1501px) {
-  .burgerIcon {
-    margin-right: 12.5%;
-  }
-
-  .backArrow {
-    margin-left: 12.5%;
-  }
 }

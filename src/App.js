@@ -4,6 +4,10 @@ import Join from "./components/Join/Join";
 import Main from "./components/Main/Main";
 import "./App.css";
 
+// This along with the CSS properly sizes the viewport of mobile browsers
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
+
 const App = () => {
   return (
     <div className="App">

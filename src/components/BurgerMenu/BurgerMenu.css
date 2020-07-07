@@ -1,18 +1,37 @@
 .menuContainer {
-  color: white;
-  text-align: center;
-  background-color: #919191;
-  width: 80%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-content: center;
-  z-index: 1;
+
+  height: 100%;
+  width: 100%;
   position: fixed;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
-  border: 2px solid #363636;
-  max-height: 65%;
+  z-index: 1;
+  top: 0;
+  right: 0;
+
+  transition: 0.3s;
+}
+
+.menuContentContainer {
+  height: 100%;
+  width: 70%;
+  background-color: #2b2b2f;
+  overflow-y: auto;
+  overflow: auto;
+}
+
+.menuShim {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 30%;
+}
+
+.hiddenBM {
+  position: absolute;
+  top: 0;
+  right: -400px;
+  visibility: hidden;
 }
 
 .titleBar {
@@ -30,14 +49,16 @@
   margin: 0;
   padding-top: 10px;
   padding-bottom: 10px;
+  color: white;
+  font-size: 18px;
 }
 
 .xIcon {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   margin-right: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 5px;
   cursor: pointer;
 }
@@ -58,29 +79,31 @@
 }
 
 /* Mobiles */
-@media (min-width: 0px) and (max-width: 1200px) {
-  .menuContainer {
+@media (min-width: 0px) and (max-width: 1000px) {
+  .menuContentContainer {
     width: 80%;
   }
-  .hiddenBM {
-    display: none;
+  .menuShim {
+    width: 20%;
   }
 }
 
 /* Midscreen */
-@media (min-width: 1200px) and (max-width: 1500px) {
-  .menuContainer {
+@media (min-width: 1000px) and (max-width: 1500px) {
+  .menuContentContainer {
+    width: 30%;
+  }
+  .menuShim {
     width: 70%;
   }
 }
 
 /* Widescreen */
 @media (min-width: 1501px) {
-  .menuContainer {
-    width: 65%;
+  .menuContentContainer {
+    width: 30%;
   }
-}
-
-.hiddenBM {
-  display: none;
+  .menuShim {
+    width: 70%;
+  }
 }

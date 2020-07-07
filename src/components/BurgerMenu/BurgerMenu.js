@@ -8,23 +8,32 @@ import ControlList from "./MenuContent/ControlList/ControlList";
 
 const BurgerMenu = ({ burgerMenuBool, toggleBurgerMenu, users }) => (
   <div className={burgerMenuBool ? "menuContainer" : "hiddenBM"}>
-    <div className="titleBar">
-      <div className="xIcon"></div>
-      <p className="menuTitle">Game Information</p>
-      <img
-        className="xIcon"
-        src={xIcon}
-        alt="exit menu"
+    <div
+      className="menuShim"
+      onClick={() => toggleBurgerMenu(burgerMenuBool)}
+    ></div>
+    <div className="menuContentContainer">
+      <div
+        className="titleBar"
         onClick={() => toggleBurgerMenu(burgerMenuBool)}
-      />
-    </div>
-    <div className="menuContent">
-      <MenuItem
-        title={"Current Players"}
-        content={<OnlineUsers users={users} />}
-      ></MenuItem>
-      <MenuItem title={"How to play"} content={<HowToPlay />}></MenuItem>
-      <MenuItem title={"Controls"} content={<ControlList />}></MenuItem>
+      >
+        <div className="xIcon"></div>
+        <p className="menuTitle">Game Information</p>
+        <img
+          className="xIcon"
+          src={xIcon}
+          alt="exit menu"
+          onClick={() => toggleBurgerMenu(burgerMenuBool)}
+        />
+      </div>
+      <div className="menuContent">
+        <MenuItem
+          title={"Current Players"}
+          content={<OnlineUsers users={users} />}
+        ></MenuItem>
+        <MenuItem title={"How to play"} content={<HowToPlay />}></MenuItem>
+        <MenuItem title={"Controls"} content={<ControlList />}></MenuItem>
+      </div>
     </div>
   </div>
 );

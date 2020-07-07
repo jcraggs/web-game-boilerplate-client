@@ -22,6 +22,7 @@ const Join = () => {
   };
 
   useEffect(() => {
+    document.body.style.position = "";
     let sharedRoomString = getSharedRoom(currentURL);
     if (sharedRoomString.length !== 0) {
       setSharedRoom(sharedRoomString.slice(0, 10));

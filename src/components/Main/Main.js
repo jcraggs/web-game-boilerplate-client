@@ -91,6 +91,7 @@ const Main = ({ location }) => {
   }, [ENDPOINT, location.search]);
 
   useEffect(() => {
+    document.body.style.position = "";
     socket.on("message", (message) => {
       setMessages((msgs) => [...msgs, message]);
     });
@@ -123,6 +124,10 @@ const Main = ({ location }) => {
 
   const toggleBurgerMenu = (burgerMenuBool) => {
     hideBurgerMenu(!burgerMenuBool);
+    if (burgerMenuBool === false) {
+      document.body.style.position = "fixed";
+      return;
+    } else document.body.style.position = "";
   };
 
   const readyPlayer = (event, name) => {
