@@ -144,6 +144,7 @@ const Main = ({ location }) => {
     if (showContentBool) {
       return (
         <div className="mainOuterContainer">
+          {burgerMenuBool === true ? <div className="coverShim"></div> : null}
           <NavBar
             burgerMenuBool={burgerMenuBool}
             toggleBurgerMenu={toggleBurgerMenu}
