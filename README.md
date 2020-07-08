@@ -48,34 +48,35 @@ In order to view development features on a mobile device (by navigating to the l
 ## React App component structure:
 
 ```raw
-App                      --> Where our two routes are defined
+App                         --> Where our two routes are defined
 │
-├── Join                 --> Landing page when a user first visits the site
+├── Join                    --> Landing page when a user first visits the site
 │
-├── RoomFull             --> Pop-up modal for when a user attemps to join a full room
+├── RoomFull                --> Pop-up modal for when a user attemps to join a full room
 │
-├── Loading              --> Small spinner for when the app is transitioning from login to the main page
+├── Loading                 --> Small spinner for when the app is transitioning from login to the main page
 │
-├── Main                 --> The main component for our app once a user has joined a room
+├── Main                    --> The main component for our app once a user has joined a room
 │
-├── NavBar               --> Houses the back arrow (to quit the current room) and burger menu
+├── NavBar                  --> Houses the back arrow (to quit the current room) and burger menu
 │
-├── BurgerMenu           --> Clickable element that contains the various options and information panels
-│   ├── MenuItem         --> Reusable menu element which takes the input of a content component from MenuContent
+├── BurgerMenu              --> Clickable element that contains the various options and information panels
+│   ├── MenuItem            --> Reusable menu element which takes the input of a content component from MenuContent
 │   └── MenuContent
-│        ├── ControlList --> Simple two column component showing the controls of the game
-│        ├── HowToPlay   --> Text component explaining the rules of the game
-│        └── OnlineUsers --> List component showing the players currently online
+│        ├── ControlList    --> Simple two column component showing the controls of the game
+│        ├── HowToPlay      --> Text component explaining the rules of the game
+│        └── OnlineUsers    --> List component showing the players currently online
 │
-├── Game                 --> The game component made by other projects should go in here
-│   └── ReadyPlayers     --> A lobby for players to gather in prior to the start of the game
+├── Game                    --> The game component made by other projects should go in here
+│   └── ReadyPlayers        --> A lobby for players to gather in prior to the start of the game
+│       └── ShareLinkPopup  --> A pop-up notifying the user the shareable link is copied to their clipboard
 │
 └── Chat
-    ├── InfoBar          --> Shows the current room and an online indicator, is a hideable element
-    ├── MessageList      --> Component which loops over all the messages stored in the chat array
-    │    └── Message     --> Single message component, renders blue or grey depending on which user is viewing it
+    ├── InfoBar             --> Shows the current room and an online indicator, is a hideable element
+    ├── MessageList         --> Component which loops over all the messages stored in the chat array
+    │    └── Message        --> Single message, renders blue or grey depending on which user is viewing it
     │
-    └── ChatInput        --> Input component for typing and sending messages
+    └── ChatInput           --> Input component for typing and sending messages
 ```
 
 ## Hosting:

@@ -1,0 +1,44 @@
+.shareLinkPopUpOuterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shareLinkPopUpContainer {
+  position: fixed;
+  z-index: 1;
+  bottom: 10%;
+  transition: 0.3s;
+}
+
+.hiddenPopUp {
+  position: absolute;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.shareLinkPopUpContents {
+  display: flex;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12pt;
+  color: black;
+  background-color: white;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  text-align: center;
+  width: calc(80vw + 10px);
+  max-width: 310px;
+}
+
+.popUpContentsDecorator {
+  background-color: rgb(103, 221, 34);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 5px;
+  margin-right: 10px;
+}
+
+.popUpContentsText {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

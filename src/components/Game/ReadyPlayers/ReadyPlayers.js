@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ReadyPlayers.css";
 import share from "../../../icons/share.png";
+import ShareLinkPopup from "./ShareLinkPopup/ShareLinkPopup";
 
 const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
   let localPlayer = {};
   let everybodyReady = false;
   let openSlots = users[0].roomSizeLimit - users.length;
   let openSlotsArr = [];
+  const [clickedShareBool, showSharePopup] = useState(false);
+
+  const showPopup = () => {
+    showSharePopup(true);
+    setTimeout(function () {
+      showSharePopup(false);
+    }, 3000);
+  };
+
+  const dismissPopup = () => {
+    showSharePopup(false);
+  };
 
   const createOpenSlotsDiv = (openSlotsArr, openSlots) => {
     for (let i = 0; i < openSlots; i++) {
@@ -16,12 +29,13 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
   };
 
   const getShareableLink = (room) => {
+    showPopup();
     const currentURL = window.location.href;
     let splitURL = currentURL.split("/game?")[0];
     let shareableLink = splitURL + `/?sharedRoom=${room}`;
     if (shareableLink !== undefined) {
       return shareableLink;
-    } else return "";
+    } else return null;
   };
 
   let divCountForSlots = createOpenSlotsDiv(openSlotsArr, openSlots);
@@ -143,6 +157,7 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
 
       <button
         className="shareLinkButton"
+        // writeText only works over HTTPS or localhost, so will break in development if not using either of those
         onClick={() => navigator.clipboard.writeText(getShareableLink(room))}
       >
         <div className="shareLinkContents">
@@ -150,6 +165,11 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
           <p className="shareLinkButtonText">Invite friends!</p>
         </div>
       </button>
+
+      <ShareLinkPopup
+        dismissPopup={dismissPopup}
+        clickedShareBool={clickedShareBool}
+      />
     </div>
   );
 };
