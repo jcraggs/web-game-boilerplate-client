@@ -19,6 +19,7 @@
 .gameLobbyTitle {
   font-size: 16pt;
   margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .readyUserInnerContainer {
@@ -43,13 +44,15 @@
 
 .playerName {
   display: flex;
+  align-items: center;
   font-size: 13pt;
   height: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .playerNameText {
   max-width: 100%;
-  margin-top: 2px;
   overflow: hidden;
   text-align: left;
 }
@@ -163,9 +166,12 @@
   width: 25px;
 }
 
-.test213 {
-  position: absolute;
+.shimContainer {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
   top: 0;
-  right: -400px;
-  visibility: hidden;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }

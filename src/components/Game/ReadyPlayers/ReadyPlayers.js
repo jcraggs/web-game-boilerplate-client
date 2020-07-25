@@ -2,13 +2,22 @@ import React, { useState } from "react";
 import "./ReadyPlayers.css";
 import share from "../../../icons/share.png";
 import ShareLinkPopup from "./ShareLinkPopup/ShareLinkPopup";
+import ReturnToLobby from "./ReturnToLobby/ReturnToLobby";
 
-const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
+const ReadyPlayers = ({
+  users,
+  name,
+  readyPlayer,
+  startGame,
+  room,
+  gameData,
+}) => {
   let localPlayer = {};
   let everybodyReady = false;
   let openSlots = users[0].roomSizeLimit - users.length;
   let openSlotsArr = [];
   const [clickedShareBool, showSharePopup] = useState(false);
+  const [returnMessageBool, showReturnMessage] = useState(true);
 
   const showPopup = () => {
     showSharePopup(true);
@@ -19,6 +28,7 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
 
   const dismissPopup = () => {
     showSharePopup(false);
+    showReturnMessage(false);
   };
 
   const createOpenSlotsDiv = (openSlotsArr, openSlots) => {
@@ -170,6 +180,20 @@ const ReadyPlayers = ({ users, name, readyPlayer, startGame, room }) => {
         dismissPopup={dismissPopup}
         clickedShareBool={clickedShareBool}
       />
+
+      {gameData.returnReason ? (
+        <div>
+          <div
+            className={returnMessageBool ? "shimContainer" : null}
+            onClick={() => dismissPopup()}
+          ></div>
+          <ReturnToLobby
+            returnMessageBool={returnMessageBool}
+            dismissPopup={dismissPopup}
+            returnMessage={gameData.returnReason}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

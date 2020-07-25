@@ -11,7 +11,7 @@ Current features of the web app:
 - Quick and easy method of joining game rooms, no need for accounts or signing up!
 - Real time messaging component, hideable by clicking on the drop down arrow.
 - A lobby for players to gather in prior to the game start.
-- Ability to control number of user connections per room (default is 6).
+- Ability to control number of user connections per room (default is 4; set in the backend).
 - Built in, componentised burger menu; easy to expand upon based on future needs. The menu comes with three example dropdowns:
   - A list of all the current players in the room
   - A text based tab of game rules
@@ -24,7 +24,7 @@ Note the application has been built with Chrome on desktop and Safari on iOS. Pe
 
 ## Who is this repo for?
 
-This repo is for people who have moderate experience of React and don't want to have to sort out all the styling and peripheral components required for a responsive and an easy to use multiplayer web game platform. The only component that you really need to focus on is the actual game.
+This repo is for people who have moderate experience of React and don't want to have to sort out all the styling and peripheral components required for a responsive and an easy to use multiplayer web game platform. The only component that you really need to focus on building is the actual game.
 
 ## To run this project locally:
 
@@ -69,7 +69,8 @@ App                         --> Where our two routes are defined
 │
 ├── Game                    --> The game component made by other projects should go in here
 │   └── ReadyPlayers        --> A lobby for players to gather in prior to the start of the game
-│       └── ShareLinkPopup  --> A pop-up notifying the user the shareable link is copied to their clipboard
+│       ├── ShareLinkPopup  --> A pop-up notifying the user the shareable link is copied to their clipboard
+│       └── ReturnToLobby   --> A pop-up notifying users why the game ended upon their return to lobby
 │
 └── Chat
     ├── InfoBar             --> Shows the current room and an online indicator, is a hideable element

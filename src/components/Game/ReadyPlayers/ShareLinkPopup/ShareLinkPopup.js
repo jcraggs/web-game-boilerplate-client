@@ -11,8 +11,8 @@ const ShareLinkPopup = ({ dismissPopup, clickedShareBool }) => {
         }}
       >
         <div className="shareLinkPopUpContents">
-          <div class="popUpContentsDecorator">&nbsp;</div>
-          <p class="popUpContentsText">Copied to Clipboard!</p>
+          <div className="popUpContentsDecorator">&nbsp;</div>
+          <p className="popUpContentsText">Copied to Clipboard!</p>
         </div>
       </div>
     </div>

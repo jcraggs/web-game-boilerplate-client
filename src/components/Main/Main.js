@@ -27,8 +27,9 @@ const Main = ({ location }) => {
   const [showContentBool, showContent] = useState(false); // Change to true to allow development on mobile when hosting server locally
   const [gameData, setGameData] = useState({});
 
-  const ENDPOINT =
-    "https://web-game-boilerplate.herokuapp.com/" || "localhost:5000";
+  // Points at the back end:
+  const ENDPOINT = "https://web-game-boilerplate.herokuapp.com/";
+  // const ENDPOINT = "localhost:5000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -100,7 +101,6 @@ const Main = ({ location }) => {
     });
     socket.on("roomFull", function () {
       setLoadingStatus(false);
-      // return (window.location.href = `/`);
     });
     socket.on("allowEntry", function (entryStatus) {
       setLoadingStatus(false);
@@ -136,8 +136,7 @@ const Main = ({ location }) => {
   };
 
   const startGame = () => {
-    socket.emit("startGame");
-    console.log(gameData);
+    socket.emit("startGame", { room });
   };
 
   if (loading !== true) {

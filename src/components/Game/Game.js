@@ -24,6 +24,7 @@ const Game = ({
               readyPlayer={readyPlayer}
               startGame={startGame}
               room={room}
+              gameData={gameData}
             ></ReadyPlayers>
           ) : (
             <p style={{ margin: "10px" }}>
