@@ -133,7 +133,7 @@ const ReadyPlayers = ({
           </div>
           {users[0].name === localPlayer.name ? (
             <div style={{ width: "100%" }}>
-              {everybodyReady === true ? (
+              {everybodyReady === true && users.length > 1 ? (
                 <button
                   className="startButton"
                   disabled={!everybodyReady}
@@ -158,11 +158,15 @@ const ReadyPlayers = ({
       </div>
 
       <div className="lobbyWaitingStatus">
-        {everybodyReady === true ? (
+        {users.length <= 1 ? (
+          <p className="waitingMessage">Waiting for players to join...</p>
+        ) : null}
+        {everybodyReady === true && users.length > 1 ? (
           <p className="waitingMessage">Waiting for host to start...</p>
-        ) : (
+        ) : null}
+        {everybodyReady !== true && users.length > 1 ? (
           <p className="waitingMessage">Waiting for everyone to ready...</p>
-        )}
+        ) : null}
       </div>
 
       <button
@@ -180,7 +184,6 @@ const ReadyPlayers = ({
         dismissPopup={dismissPopup}
         clickedShareBool={clickedShareBool}
       />
-
       {gameData.returnReason ? (
         <div>
           <div

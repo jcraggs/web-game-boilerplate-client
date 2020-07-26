@@ -101,6 +101,7 @@ const Main = ({ location }) => {
     });
     socket.on("roomFull", function () {
       setLoadingStatus(false);
+      socket.disconnect();
     });
     socket.on("allowEntry", function (entryStatus) {
       setLoadingStatus(false);

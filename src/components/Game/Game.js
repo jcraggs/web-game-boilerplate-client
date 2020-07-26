@@ -11,13 +11,11 @@ const Game = ({
   gameData,
   room,
 }) => {
-  let gameStarted = gameData.gameStarted;
-
   return (
     <div className={chatboxBool ? "gameContainerLarge" : "gameContainer"}>
       {users ? (
         <div className="gameboxContent">
-          {gameStarted !== true ? (
+          {gameData.gameStarted !== true ? (
             <ReadyPlayers
               users={users}
               name={name}
