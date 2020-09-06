@@ -171,8 +171,8 @@ const ReadyPlayers = ({
 
       <button
         className="shareLinkButton"
-        // writeText only works over HTTPS or localhost, so will break in development if not using either of those
-        onClick={() => navigator.clipboard.writeText(getShareableLink(room))}
+        // note writeText only works over HTTPS or localhost
+        onClick={() => navigator?.clipboard?.writeText(getShareableLink(room))}
       >
         <div className="shareLinkContents">
           <img className="shareLinkIcon" src={share} alt="share room link" />
